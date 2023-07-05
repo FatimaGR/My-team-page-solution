@@ -28,14 +28,14 @@ body {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
-/* .card{ */
-  /* max-width: 100px; */
-/* } */
+
 .card{
   display: flex;
   align-items: flex-start;
   box-sizing: border-box;
-  max-width: 260px;
+  max-width: 100%;
+  justify-content: space-between;
+  gap: 10px;
 }
 .card img{
   max-width: 238px;
@@ -43,20 +43,25 @@ body {
 }
 .card .name{
   font-weight: 600;
+  margin-top: 10px;
 }
 .card .position{
   font-family: 'PT Serif', serif;
   font-size: 12px;
   text-transform: uppercase;
-  transform: rotateZ(90deg);
-  width: 100px;
-  max-height: 12px;
-  margin: 20px 0;
+  /* transform-origin: top left;
+  transform: rotate(90deg); */
+  /* width: 100px; */
+  /* max-height: 12px; */
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  /* margin: 20px 0; */
 }
 .image-container{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 10%;
+  grid-column-gap: 10%;
+  grid-row-gap: 25%;
   margin: 150px 0;
   height: auto;
   box-sizing: border-box;

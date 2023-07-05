@@ -1,3 +1,4 @@
+/* general styles */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=PT+Serif:wght@400;700&family=Poppins:wght@400;600&display=swap');
 
 *{
@@ -9,8 +10,10 @@ body {
   padding: 5% 15% 2% 15%;
   margin: 0;
   font-size: 18px;
+  box-sizing: border-box;
 }
 
+/* description styles */
 .description{
   display: flex;
   gap: 20%;
@@ -29,6 +32,16 @@ body {
   margin-bottom: 10px;
 }
 
+/* image container styles */
+.image-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 5%;
+  grid-row-gap: 5%;
+  margin: 150px 0;
+  height: auto;
+  box-sizing: border-box;
+}
 .card{
   display: flex;
   align-items: flex-start;
@@ -37,9 +50,16 @@ body {
   justify-content: space-between;
   gap: 10px;
 }
+.card:nth-child(-3n + 5){
+  margin-top: 100px;
+}
 .card img{
-  max-width: 238px;
+  max-width: 100%;
   object-fit: cover;
+}
+.card img:hover{
+  transition: transform .4s;
+  transform: scale(1.1);
 }
 .card .name{
   font-weight: 600;
@@ -49,31 +69,65 @@ body {
   font-family: 'PT Serif', serif;
   font-size: 12px;
   text-transform: uppercase;
-  /* transform-origin: top left;
-  transform: rotate(90deg); */
-  /* width: 100px; */
-  /* max-height: 12px; */
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  /* margin: 20px 0; */
-}
-.image-container{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 10%;
-  grid-row-gap: 25%;
-  margin: 150px 0;
-  height: auto;
-  box-sizing: border-box;
 }
 
+/* footer styles */
 footer{
   font-family: 'Montserrat', sans-serif;
   text-align: center;
+}
+footer p{
   color: #A9A9A9;
   font-size: 14px;
 }
 footer a{
   color: #A9A9A9;
-  font-weight: 500;
+  font-weight: 700;
+}
+footer a:hover{
+  color: #2a1f67;
+}
+
+@media (max-width: 870px){
+  body{
+    display: flex;
+    flex-direction: column;
+  }
+  .description{
+    flex-direction: column;
+    gap: 40px;
+  }
+  .description .information{
+    max-width: 90%;
+  }
+  .image-container{
+    grid-template-columns: 1fr 1fr;
+    margin: 60px 0;
+    grid-row-gap: 2%;
+  }
+  .card:nth-child(n + 5){
+    margin: 0;
+  }
+  .card:nth-child(-2n + 6){
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 600px){
+  body{
+    gap: 120px;
+    padding: 5%;
+    padding-top: 16%;
+  }
+  .description .information{
+    font-size: 14px;
+  }
+  .card{
+    gap: 5px;
+  }
+  .card .position{
+    font-size: 10px;
+  }
 }
